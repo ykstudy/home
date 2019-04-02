@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<!-- charset -->
+	<meta charset="utf-8" />
+	<!-- prevent scaling -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<title data-properties="title"></title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/reset.min.css" /> -->
+	<!--
+		Font Awesome 字体为您提供可缩放矢量图标,它可以被定制大小、颜色、阴影以及任何可以用CSS的样式。
+	-->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--
+		更换主题
+	-->
+    <link rel="stylesheet" type="text/css" href="css/themeswitcher.css" />
+
+    <!--[if IE]><link rel="stylesheet" type="text/css" href="css/ie.css"><![endif]-->
+    <!--[if lt IE9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+	<!-- google fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,700,300|Bitter:700,400' rel='stylesheet' type='text/css' />
+
+	<!-- including js -->
+	<!-- Add latest jQuery and fancybox files -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!--
+		Fancybox是一款基于jquery开发的类Lightbox插件。支持对放大的图片添加阴影效果，对于一组相关的图片添加导航操作按纽。
+		Fancybox 是一款很绚丽的 jquery 弹出层展示插件，该lightbox除了可以加载DIV，图片、图片集、Ajax数据，还能加载SWF影片，iframe页面等等。
+	-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+	<!--
+		这个jQuery插件简化了客户端表单验证，同时还提供了大量的自定义选项。
+		如果您从头开始构建新内容，但是当您尝试将某些内容集成到具有大量现有标记的现有应用程序中时，它将是一个不错的选择。
+		该插件捆绑了一组有用的验证方法，包括URL和电子邮件验证，同时提供API来编写自己的方法。
+		所有捆绑方法都带有英语的默认错误消息，并翻译成其他37种语言。
+	-->
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
+	<!--
+		Isotope 是一个jQuery的插件，用来实现精美的动态元素布局。
+		Isotope可以实现仅仅依靠CSS3无法实现的动态布局方式，可以动态添加，删除，排序，筛选元素。
+		Isotope的动画引擎可以充分使用现代浏览器CSS动画中GPU硬件加速性能,。
+	-->
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+	<!--
+		百度地图API
+	-->
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=V826wMHK6Yay6EqqpFkXG4FcYaLwTpmr"></script>
+	<!--
+		i18n多语言
+	-->
+	<script type="text/javascript" src="js/jquery.i18n.properties.js"></script>
+	<!--
+		i18n多语言接口
+	-->
+	<script type="text/javascript" src="js/i18n.js"></script>
+	<!--
+		自定义的处理内容
+	-->
+	<script type="text/javascript" src="js/index.js"></script>
+<body>
+	<div class="i18n"  dir="rtl">
+		<div class="translate_wrapper">
+			<div class="current_lang">
+				<div class="lang">
+					<i class="fa fa-chevron-down" aria-hidden="true"></i>
+					<span class="lang-txt" data-properties="current_lang_name">ZH</span>
+					<img data-properties="current_lang_image" data-ptype="src">
+				</div>
+			</div>
+			<div class="more_lang">
+				<div class="lang" data-value='zh'>
+					<span class="lang-txt">简体中文</span>
+					<img src="images/china.png">
+				</div>
+				<div class="lang" data-value='en'>
+					<span class="lang-txt">English</span>
+					<img src="images/english.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="themeswitcher">
+		<p><i class="icon-cogs"></i></p>
+		<ul class="selector">
+			<li><img data-nr="0" src="images/backgrounds/bg_1.png" /></li>
+			<li><img data-nr="1" src="images/backgrounds/bg_2.png" /></li>
+			<li><img data-nr="2" src="images/backgrounds/bg_4.png" /></li>
+			<li><img data-nr="3" src="images/backgrounds/bg_5.png" /></li>
+			<li><img data-nr="4" src="images/backgrounds/bg_8.png" /></li>
+			<li><img data-nr="5" src="images/backgrounds/bg_9.png" /></li>
+			<li><img data-nr="6" src="images/backgrounds/selt_bg_7.jpg" /></li>
+			<li><img data-nr="7" src="images/backgrounds/self_bg_8.jpg" /></li>
+			<li><img data-nr="8" src="images/backgrounds/self_bg_9.gif" /></li>
+		</ul>
+	</div>
+
+	<div class="panorama">
+		<img class="p_img" alt="panorama" />
+	</div>
+
+	<div class="wrapper">
+		<header>
+			<h1><a class="no-animation" href="#"><span data-properties="name"></span></a></h1>
+			<h2 id="myInfo" data-properties="myInfo"></h2>
+			<div class="clear"></div>
+		</header>
+		<section class="content">
+		<ul class="social-media">
+			<li><a class="no-animation" href="#"><i class="icon-facebook-sign"></i></a></li>
+			<li><a class="no-animation" href="#"><i class="icon-twitter-sign"></i></a></li>
+			<li><a class="no-animation" href="#"><i class="icon-google-plus-sign"></i></a></li>
+		</ul>
+		<ul class="content-list">
+
+			<li class="list-home"> <!-- home start -->
+
+			<div class="column">
+
+				<div class="g_15 f_right">
+
+					<img class="portrait" src="images/portrait.png" alt="portrait" />
+
+				</div>
+
+
+				<div class="g_15 f_left">
+
+					<blockquote class="about">
+						&bdquo; Such a greate guy to work with! Pure talent and expericence.&ldquo;<br />
+						<p>- Bill Gates</p>
+					</blockquote>
+
+					<p class="about_me">Hi, I am John Doe!<br /><br /> I love to create Websites and Wordpress Themes. <br />I know Photoshop off pat, realize my concepts with my distinct knowledge in CSS and HTML.<br />
+					<i>Interested?</i> <br />Take a look at my Portfolio!</p>
+
+				</div>
+
+			</div>
+			
+			<div class="inner_copyright">Collect from <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a></div>
+
+			<div class="column p_top_none">
+
+				<div class="g_15 g_620_padding">
+
+					<h3 class="heading"><span>+</span> Employment<span><i class="icon-briefcase"></i></span></h3>
+
+					<ul class="employment">
+
+						<li class="time">2011 - present</li>
+
+						<li class="company"><span>Apple Inc.</span></li>
+
+						<li class="work">OSX Development</li>
+
+						<li class="work">Design Management</li>
+
+					</ul>
+
+					<ul class="employment">
+
+						<li class="time">2009 - 2011</li>
+
+						<li class="company"><span>Designpartment Inc.</span></li>
+
+						<li class="work">iOS Development</li>
+
+						<li class="work">Mobile Design</li>
+
+					</ul>
+
+				</div>
+
+				<div class="g_15 g_620_padding">
+
+					<h3 class="heading"><span>+</span> Skills <span><i class="icon-cloud"></i></span></h3>
+
+						<table class="skills">
+
+							<tr>
+								<td class="desc">Photoshop</td><td><div class="outer-bar"><div class="inner-bar" style="width: 100%"></div></div></td>
+							</tr>
+
+							<tr>
+								<td class="desc">HTML</td><td><div class="outer-bar"><div class="inner-bar" style="width: 80%"></div></div></td>
+							</tr>
+
+							<tr>
+								<td class="desc">CSS</td><td><div class="outer-bar"><div class="inner-bar" style="width: 90%"></div></div></td>
+							</tr>
+
+							<tr>
+								<td class="desc">PHP/MySQL</td><td><div class="outer-bar"><div class="inner-bar" style="width: 60%"></div></div></td>
+							</tr>
+
+						</table>
+
+					<h3 class="heading"><span>+</span> Education <span><i class="icon-book"></i></span></h3>
+
+						<ul class="education">
+
+							<li class="time">2006 - 2009</li>
+
+							<li class="institution"><span>University of Boston</span></li>
+
+							<li class="grade">Bachelor of Arts in Graphic Design</li>
+
+						</ul>
+
+				</div>
+
+			</div>
+
+			</li><!-- home end -->
+
+			<li class="list-portfolio"> <!-- portfolio start -->
+
+				<div class="column">
+
+					<div class="g_3">
+
+						<h1 class="heading">Portfolio!</h1>
+
+						<p>Here is a selection of my work. Filter the items by clicking on the terms below.<br />Contact me for more examples and enjoy the tour!</p>
+
+						<ul class="isotope-filter">
+
+							<li><i class="icon-circle-arrow-right"></i> <a href="#" data-filter="*">all</a></li>
+
+							<li><i class="icon-circle-arrow-right"></i> <a href="#" data-filter=".web">webdesign</a></li>
+
+							<li><i class="icon-circle-arrow-right"></i> <a href="#" data-filter=".print">print</a></li>
+
+							<li><i class="icon-circle-arrow-right"></i> <a href="#" data-filter=".ads">advertising</a></li>
+
+						</ul>					
+
+						<div class="isotope-portfolio">
+
+							<!-- Item 1 -->
+
+							<div class="item web ads">
+
+								<div class="item-slider img">
+									<a class="fancybox img" href="images/portfolio/newyork_2010.jpg"></a>
+								</div>
+
+								<img src="images/portfolio/newyork_2010_thumb.jpg" alt="" />
+
+								<div class="item-name">New York</div>
+
+							</div>
+
+							<!-- Item 2 -->
+
+							<div class="item print web">
+
+								<div class="item-slider img">
+									<a class="fancybox img" href="images/portfolio/nyc_taxi.jpg"></a>
+								</div>
+
+								<img src="images/portfolio/nyc_taxi_thumb.jpg" alt="" />
+
+								<div class="item-name">Yellow Cab</div>
+
+							</div>
+
+							<!-- Item 3 -->
+
+							<div class="item print">
+
+								<div class="item-slider img">
+									<a class="fancybox img" href="images/portfolio/nyc_streets.jpg"></a>
+								</div>
+
+								<img src="images/portfolio/nyc_streets_thumb.jpg" alt="" />
+
+								<div class="item-name">Streets</div>
+
+							</div>
+
+							<!-- Item 4 -->
+
+							<div class="item ads print">
+
+								<div class="item-slider img">
+									<a class="fancybox img" href="images/portfolio/linux_print.jpg"></a>
+								</div>
+
+								<img src="images/portfolio/linux_print_thumb.jpg" alt="" />
+
+								<div class="item-name">Linux</div>
+
+							</div>
+
+							<!-- Item 5 -->
+
+							<div class="item web ads">
+
+								<div class="item-slider img">
+									<a class="fancybox img" href="images/portfolio/nyc_timesquare.jpg"></a>
+								</div>
+
+								<img src="images/portfolio/nyc_timesquare_thumb.jpg" alt="" />
+
+								<div class="item-name">Timesquare</div>
+
+							</div>
+
+							<!-- Item 6 -->
+
+							<div class="item web">
+
+								<div class="item-slider img">
+									<a class="fancybox img" href="images/portfolio/nyc_traffic_lights.jpg"></a>
+								</div>
+
+								<img src="images/portfolio/nyc_traffic_lights_thumb.jpg" alt="" />
+
+								<div class="item-name">Streets</div>
+
+							</div>
+
+							<!-- Item 7 -->
+
+							<div class="item print ads">
+
+								<div class="item-slider img">
+									<a class="fancybox img" href="images/portfolio/wallstreet_2010.jpg"></a>
+								</div>
+
+								<img src="images/portfolio/wallstreet_2010_thumb.jpg" alt="" />
+
+								<div class="item-name">Streets</div>
+
+							</div>
+
+						<div class="clear"></div>
+
+						</div> <!-- end of portfolio -->
+
+						<div class="clear"></div>
+
+					</div>
+
+				</div>
+
+			</li> <!-- portfolio end -->
+
+			<li class="list-contact"> <!-- contact start -->
+
+				<div id="baiduMap" class="map"></div>
+
+				<div class="column">
+
+					<div class="g_2">
+
+						<h1 class="heading">Contact Form</h1>
+
+						<p>To contact me you can hit my up on the various social networks or contact me in person. Use the contact form below. I usually reply within 24 hours.</p>
+
+					</div>
+
+					<div class="g_1">
+
+						<address>
+
+						<ul class="contact-info">
+
+							<li><i class="icon-envelope"></i> <a href="mailto:your@email.com">jd@johndoe.com</a></li>
+
+							<li><i class="icon-globe"></i> <a href="#">www.johndoe.com</a></li>
+
+							<li><i class="icon-map-marker"></i> Elizabeth St 210, Melbourne</li>
+
+							<li><i class="icon-phone"></i> +44 6748 7832 32</li>
+
+						</ul>
+
+					</address>
+
+					</div>
+					
+				</div>	
+
+				<div class="column p_top_none">	
+
+					<div class="g_3">
+
+						<form id="contact" action="" method="POST" />
+
+							<div class="icon-wrapper">
+
+								<p>
+									<i class="icon-ok"></i><br />
+									Thanks! - I will reply as soon as possible! No spam for sure!
+								</p>
+
+							</div>
+
+							<p><label for="name">Name: *</label></p>
+
+							<p><input type="text" name="contact_name" id="name" class="c_name required" /></p>
+
+							<p><label for="email">E-Mail: *</label></p>
+
+							<p><input type="email" name="contact_email" id="email" class="c_email required email" /></p>
+
+							<p><label for="message">Message: *</label></p>
+
+							<p><textarea name="contact_message" id="message" class="c_message required"></textarea></p>
+
+							<p><input name="submit" type="submit" value="Send it!" /></p>
+
+						</form>
+
+					</div>	
+
+				</div>
+
+			</li> <!-- contact end -->
+
+			<li>
+
+			<ul class="navigation">
+
+				<li class="home"><i class="fa fa-home" aria-hidden="true"></i><p>Home</p></li>
+
+				<li class="portfolio" id="portfolio"><i class="fa fa-table" aria-hidden="true"></i><p>Portfolio</p></li>
+
+				<li id="gmap" class="contact"><i class="fa fa-envelope" aria-hidden="true"></i><p>Contact</p></li>
+
+			</ul>
+
+			</li>
+
+			<li>
+
+				<div class="clear"></div>
+
+			</li>
+
+		</ul>
+
+		</section>
+
+	</div>
+<!--
+    更换主题
+-->
+<script type="text/javascript" src="js/themeswitcher.js"></script>
+</body>
+</html>
